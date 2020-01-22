@@ -1,3 +1,19 @@
-.mz {
-    color: red
+
+.comment {
+    size: 20px;
+    color: blue;
+
+}
+
+.comment:hover {
+    opacity: 0.5;
+}
+
+.box {
+    border: 5px solid red;
+}
+
+.img:hover {
+    opacity: 0.5;
+    
 }

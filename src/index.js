@@ -1,8 +1,12 @@
-require('./index.scss');
+import './index.scss';
+import monitor from './monitor.png';
 
-let setH1 = () => {
-    document.getElementById("root").innerText = "Good bye";
-    document.getElementById("root").className = "mz";
+let submit = () => {
+    let newComment = document.getElementById('new-comment').value;
+    let commentBox = document.getElementById('comment-box');
+    commentBox.innerHTML += `<p class='comment'>${newComment}</p>`;
+
+    commentBox.innerHTML += `<img class="img" src=${monitor} />`;
 }
 
-window.setH1 = setH1;
+window.submit = submit;
