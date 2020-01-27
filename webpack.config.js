@@ -1,5 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: './src/index.js',
@@ -24,6 +26,7 @@ module.exports = {
           'sass-loader',
         ],
       },
+      { test: /\.hbs$/, loader: "handlebars-loader" },
       {
         test: /\.(png|svg|jpg|gif)$/,
         loader: 'file-loader',
@@ -33,7 +36,18 @@ module.exports = {
       }
     ],
   },
+
   plugins: [
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        handlebarsLoader: {}
+      }
+    }),
+    new HtmlWebpackPlugin({
+      title: 'index',
+      filename: 'index.html',
+      template: './src/index.hbs'
+    }),
   ]
 };

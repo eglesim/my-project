@@ -1,5 +1,6 @@
 import './index.scss';
-import monitor from './monitor.png';
+//import monitor from './monitor.png';
+import './index.hbs'
 
 let submit = () => {
     let newComment = document.getElementById('new-comment').value;
